@@ -1,0 +1,33 @@
+public class fibonacci {
+
+	public static void main(String[] args) {
+		System.out.println("Fibonacci iterativo: \n"+fib(8));
+		System.out.println("Fibonacci recursivo: \n"+fibRec(8));
+	}
+	
+	/*Fibonacci iterativo*/
+	
+	static int fib(int num) {
+		int inicio=0, siguiente=1, result=0;
+		for(int i=1; i<num;i++) {
+			result= inicio+siguiente;
+			inicio=siguiente;
+			siguiente=result;
+		}
+		return result;
+	}
+	
+	
+	/*Fibonacci recursivo*/
+	
+	static int fibRec(int num) {
+		if(num>1) {
+			return fibRec(num-1)+ fibRec(num-2);
+		}
+		else {
+			if(num==1) 
+				return 1;
+				else return 0;
+		}
+	}
+}
